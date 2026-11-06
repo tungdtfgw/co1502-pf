@@ -45,3 +45,42 @@ def over_price(fruits, prices):
     print('Over average price fruits:')
     print(f'Average price: {avg_price:.2f}')
     print_fruits(over_fruits, over_prices)
+
+
+def print_menu():
+    print('FRUIT MANAGEMENT')
+    print('----------------')
+
+    print('1. Print all fruits.')
+    print('2. Print over priced fruits.')
+    print('3. Find cheapest fruit.')
+    print('4. Find price of a fruit.')
+    print('5. Exit.')
+
+def main():
+    running = True
+
+    while running:
+        print_menu()
+        choice = int(input('Enter your choice: '))
+
+        if choice == 1: 
+            print_fruits(fruits, prices)
+        elif choice == 2: 
+            over_price(fruits, prices)
+        elif choice == 3: 
+            print(f'The cheapest fruit is: {cheapest_fruit(fruits, prices)}')
+        elif choice == 4: 
+            fruit = input('Enter fruit name: ')
+            price = get_price(fruits, prices, fruit)
+            if price is not None:
+                print(f'The price of {fruit} is: {price}')
+            else:
+                print(f'{fruit} not found.')
+        elif choice == 5:
+            running = False
+        else:
+            print('Invalid choice. Please try again.')
+
+## MAIN PROGRAM
+main()
