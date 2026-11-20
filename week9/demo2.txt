@@ -1,0 +1,14 @@
+Once a file is opened we can use the .read() method to read the contents as a string
+contents = file.read()
+And to split it into a list words, use the string .split() method
+words = contents.split()
+Another complication of opening files is that it access the computer file system
+This means it uses low-level file access resources which must be released when the program finishes
+even if something has gone wrong when opening the file
+If not, eventually the computer will run out of resources and may stop functioning
+Now that we can read in text files we can easily create a basic spell checker
+This weeks download contains dictionary.txt, a list of ~44,000 lower-case words
+So we can read in the file and run a loop which repeatedly prompts the user for a word
+if the word is in the list, we assume it is spelt correctly
+if the word is not in the list, we assume it is a misspelling
+if the user enters nothing, the loop terminates
